@@ -1,0 +1,15 @@
+[package]
+
+name = "content-type"
+authors = ["Jonathan Reem <jonathan.reem@gmail.com>"]
+version = "0.1.0"
+
+[[lib]]
+
+name = "contenttype"
+path = "src/lib.rs"
+
+[dependencies.http]
+
+git = "https://github.com/chris-morgan/rust-http.git"
+
