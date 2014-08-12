@@ -1,13 +1,13 @@
 [package]
 
-name = "content-type"
+name = "content_type"
 authors = ["Jonathan Reem <jonathan.reem@gmail.com>"]
 version = "0.1.0"
 build = "./generate"
 
 [[lib]]
 
-name = "contenttype"
+name = "content_type"
 path = "src/lib.rs"
 
 [dependencies.http]
