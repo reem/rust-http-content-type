@@ -5,7 +5,7 @@ authors = ["Jonathan Reem <jonathan.reem@gmail.com>"]
 version = "0.1.0"
 build = "./generate"
 
-[[lib]]
+[lib]
 
 name = "contenttype"
 path = "src/lib.rs"
