@@ -12,8 +12,8 @@ fn main() {
     let args = os::args();
     match args.len() {
         3 => {
-            let mime_list = Path::new(args.get(1).as_slice());
-            let mime_mod = Path::new(args.get(2).as_slice());
+            let mime_list = Path::new(args[1].as_slice());
+            let mime_mod = Path::new(args[2].as_slice());
 
             // Generate mimes
             ::mimegen::generate(mime_list, mime_mod).unwrap()
@@ -39,9 +39,9 @@ pub fn get_file_reader(path: Path) -> File {
   }
 }
 
-pub fn get_file_writer(path: Path) -> Box<Writer> {
+pub fn get_file_writer(path: Path) -> Box<Writer + Send> {
     match File::open_mode(&path, Truncate, Write) {
-        Ok(writer) => box writer as Box<Writer>,
+        Ok(writer) => box writer as Box<Writer + Send>,
         Err(e) => fail!("Unable to write file: {}", e.desc)
     }
 }
