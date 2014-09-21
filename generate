@@ -1,5 +1,0 @@
-curl http://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types | \
-awk '{if ($1 != "#") { gsub("/"," ",$1); print $2 " " $1} }' > src/generator/mimes.txt
-mkdir -p target/generator
-rustc -O -o target/generator/generator src/generator/main.rs
-target/generator/generator src/generator/mimes.txt src/mimes.rs

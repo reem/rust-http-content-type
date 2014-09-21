@@ -10,6 +10,7 @@
 *.rlib
 *.dummy
 *.exe
+*.txt
 *-test
 /target/
 /src/mimes.rs

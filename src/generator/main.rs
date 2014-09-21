@@ -1,7 +1,10 @@
-#![feature(macro_rules)]
-
 // Interact with the OS.
 // Based on the code generators in chris-morgan's rust-http
+
+#![feature(phase)]
+#[phase(plugin)]
+extern crate regex_macros;
+extern crate regex;
 
 use std::io::{File, Open, Truncate, Read, Write};
 use std::os;
