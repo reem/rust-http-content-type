@@ -1,0 +1,19 @@
+[package]
+
+name = "generator"
+authors = ["Adolfo Ochagavía <aochagavia92@gmail.com>"]
+version = "0.1.0"
+
+[lib]
+
+name = "generator"
+path = "src/lib.rs"
+plugin = true
+
+[dependencies.http]
+
+git = "https://github.com/chris-morgan/rust-http.git"
+
+[dependencies.url]
+
+git = "https://github.com/servo/rust-url.git"
