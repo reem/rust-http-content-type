@@ -3,7 +3,6 @@
 name = "content_type"
 authors = ["Jonathan Reem <jonathan.reem@gmail.com>"]
 version = "0.1.0"
-build = "./generate"
 
 [lib]
 
@@ -14,3 +13,6 @@ path = "src/lib.rs"
 
 git = "https://github.com/chris-morgan/rust-http.git"
 
+[dependencies.generator]
+
+path = "generator"
