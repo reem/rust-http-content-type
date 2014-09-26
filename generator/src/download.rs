@@ -23,9 +23,9 @@ pub fn download_mimes(url: &str) -> Result<String, String> {
     }
 }
 
-// Return a vector of tuples containing the necessary information to generate the MediaTypes.
-// The order is (ext, type_, subtype).
-// If a line does not parse, return an error message.
+// Return a vector of tuples containing the necessary information to generate the MediaTypes
+// The order is (ext, type_, subtype)
+// If a line does not parse, return an error message
 pub fn parse_mimes(mimes: &str) -> Result<Vec<(&str, &str, &str)>, String> {
     let re = regex!(r"(\S*)/(\S*)\s*(\S*)");
     let mut seen = HashSet::new(); // Avoid duplicates

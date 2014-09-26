@@ -16,3 +16,8 @@ git = "https://github.com/chris-morgan/rust-http.git"
 [dependencies.generator]
 
 path = "generator"
+
+[dependencies.phf]
+
+git = "https://github.com/sfackler/rust-phf.git"
+path = "phf"
