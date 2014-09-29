@@ -7,7 +7,6 @@
 //!     = mime_map!("http://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types");
 //! ```
 
-#![crate_name = "generator"]
 #![crate_type = "dylib"]
 #![license = "MIT"]
 
