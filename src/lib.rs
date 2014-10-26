@@ -18,11 +18,11 @@ use generator::RawMediaType;
 use http::headers::content_type::MediaType;
 use phf::PhfMap;
 
-static mimes: PhfMap<&'static str, RawMediaType>
+static MIMES: PhfMap<&'static str, RawMediaType>
     = mime_map!("http://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types");
 
 pub fn get_content_type(ext: &str) -> Option<MediaType> {
-    mimes.find_equiv(&ext)
+    MIMES.find_equiv(&ext)
          .map(to_media_type)
 }
 
