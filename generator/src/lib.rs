@@ -28,7 +28,7 @@ use syntax::ast::{CookedStr, LitStr};
 use syntax::codemap::Spanned;
 use syntax::ext::base::{DummyResult, ExtCtxt, MacResult};
 use syntax::ext::build::AstBuilder;
-use syntax::parse::token::{mod, EOF};
+use syntax::parse::token::{mod, Eof};
 use syntax::ptr::P;
 
 use download::{download_mimes, parse_mimes};
@@ -131,7 +131,7 @@ fn parse_arguments(cx: &mut ExtCtxt, main_sp: codemap::Span, tts: &[ast::TokenTr
 {
     let mut parser = parse::new_parser_from_tts(cx.parse_sess(), cx.cfg(), tts.to_vec());
 
-    let literal = if parser.token != EOF {
+    let literal = if parser.token != Eof {
         parser.parse_lit()
     } else {
         return Err((main_sp, "Unexpected end of file"));
