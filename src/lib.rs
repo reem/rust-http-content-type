@@ -17,9 +17,8 @@ extern crate phf;
 
 use generator::RawMediaType;
 use http::headers::content_type::MediaType;
-use phf::PhfMap;
 
-static MIMES: PhfMap<&'static str, RawMediaType>
+static MIMES: phf::Map<&'static str, RawMediaType>
     = mime_map!("http://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types");
 
 /// Get the rust-http MediaType associated with this extension.

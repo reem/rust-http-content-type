@@ -3,7 +3,7 @@
 //! # Usage
 //!
 //! ```
-//! let mimes: PhfMap<&'static str, RawMediaType>
+//! let mimes: phf::Map<&'static str, RawMediaType>
 //!     = mime_map!("http://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types");
 //! ```
 
