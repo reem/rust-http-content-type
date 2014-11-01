@@ -5,7 +5,7 @@
 //! req.headers.content_type = get_content_type("txt");
 //! ```
 
-#![deny(warnings, missing_doc)]
+#![deny(warnings, missing_docs)]
 #![feature(phase)]
 
 #[phase(plugin)] extern crate generator;
@@ -24,7 +24,7 @@ static MIMES: PhfMap<&'static str, RawMediaType>
 
 /// Get the rust-http MediaType associated with this extension.
 pub fn get_content_type(ext: &str) -> Option<MediaType> {
-    MIMES.find_equiv(&ext)
+    MIMES.find_equiv(ext)
          .map(to_media_type)
 }
 
