@@ -12,14 +12,23 @@
 #[phase(plugin)] extern crate phf_mac;
 
 extern crate http;
-extern crate generator;
 extern crate phf;
 
-use generator::RawMediaType;
 use http::headers::content_type::MediaType;
 
 static MIMES: phf::Map<&'static str, RawMediaType>
     = mime_map!("http://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types");
+
+// Generator uses RawMediaType unhygiencally. We could create another
+// crate and put it there, but sticking the definition here is much
+// easier.
+//
+// That said, this is a hack to avoid having to link against generator
+// after compile-time.
+struct RawMediaType {
+    pub type_: &'static str,
+    pub subtype: &'static str
+}
 
 /// Get the rust-http MediaType associated with this extension.
 pub fn get_content_type(ext: &str) -> Option<MediaType> {
@@ -40,3 +49,4 @@ fn test_basic() {
     assert_eq!(get_content_type("flv").unwrap(),
                MediaType { type_: "video".to_string(), subtype: "x-flv".to_string(), parameters: vec![] });
 }
+

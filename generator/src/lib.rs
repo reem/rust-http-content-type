@@ -35,12 +35,6 @@ use download::{download_mimes, parse_mimes};
 
 mod download;
 
-pub struct RawMediaType {
-    pub type_: &'static str,
-    pub subtype: &'static str
-}
-
-
 #[plugin_registrar]
 #[doc(hidden)]
 pub fn plugin_registrar(reg: &mut Registry) {
