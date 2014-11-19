@@ -1,11 +1,1 @@
 language: rust
-env:
-  global:
-    - LD_LIBRARY_PATH: /usr/local/lib
-script:
-    - cargo build
-    - cargo test
-    - cargo doc
-os:
-    - linux
-
