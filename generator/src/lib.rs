@@ -21,7 +21,7 @@ extern crate syntax;
 extern crate url;
 
 use phf_mac::util as phf;
-use phf_mac::util::{Entry, KeyStr};
+use phf_mac::util::{Entry, Key};
 use rustc::plugin::Registry;
 use syntax::{ast, codemap, parse};
 use syntax::ast::{CookedStr, LitStr};
@@ -84,7 +84,7 @@ fn expand(cx: &mut ExtCtxt, sp: codemap::Span, tts: &[ast::TokenTree]) -> Box<Ma
 fn generate_entry(cx: &ExtCtxt, sp: codemap::Span, ext: &str, type_: &str, subtype: &str) -> Entry {
     // The key
     let key = str_to_lit(cx, sp, ext);
-    let key_contents = KeyStr(token::intern_and_get_ident(ext));
+    let key_contents = Key::Str(token::intern_and_get_ident(ext));
 
     // The raw media type
     let raw_media_type = generate_media_type(cx, sp, type_, subtype);
