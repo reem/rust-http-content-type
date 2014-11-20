@@ -32,7 +32,7 @@ struct RawMediaType {
 
 /// Get the rust-http MediaType associated with this extension.
 pub fn get_content_type(ext: &str) -> Option<MediaType> {
-    MIMES.get_equiv(ext)
+    MIMES.get(ext)
          .map(to_media_type)
 }
 
